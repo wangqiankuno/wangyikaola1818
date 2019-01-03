@@ -327,42 +327,92 @@ var Cookie = {
  
 */
 
+// function ajax(mechod,url,data,success){
+    
+//     //1.创建对象
+//     var xhr=new XMLHttpRequest();
+    
+//     if(mechod=='GET' && data){
+//         //请求方式是get并且有数据
+//         url+='?'+data;  //var url=`api/checkname.php?username=${val}&time=${new Date()}`;
+//     }
+    
+//     xhr.open(mechod,url,true);
+    
+//     //2.发送请求
+//     if(mechod=='GET'){
+//         xhr.send();//如果是get方式，直接发送请求
+//     }else{
+//         //post方式
+//         xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
+//         xhr.send(data);//如果是post方式，数据放在send()里面传输
+//     }
+    
+//     //3.后台做
+    
+//     //4.接收数据
+//     xhr.onreadystatechange=function(){
+//         if(xhr.readyState==4){
+//             if(xhr.status==200){
+//                 //成功的：dom操作，数据渲染
+//                 if(success){
+//                     //如果有回调，就用回调
+//                     success(xhr.responseText);//实参
+//                 }
+//             }else{
+//                 alert('出错了，状态码是：'+xhr.status);//404 找不到页面，408请求超时
+//             }
+//         }
+//     }
+    
+// }
+
+
+
+/*
+	ajax函数封装：要参数
+		参数一：请求方式：get  post
+		参数二：接口路径
+		参数三：数据(可选)  name='tiantian'&psw=123456  传给后端的数据
+		参数四：成功的回调函数(可选的)
+ 
+*/
+
 function ajax(mechod,url,data,success){
-    
-    //1.创建对象
-    var xhr=new XMLHttpRequest();
-    
-    if(mechod=='GET' && data){
-        //请求方式是get并且有数据
-        url+='?'+data;  //var url=`api/checkname.php?username=${val}&time=${new Date()}`;
-    }
-    
-    xhr.open(mechod,url,true);
-    
-    //2.发送请求
-    if(mechod=='GET'){
-        xhr.send();//如果是get方式，直接发送请求
-    }else{
-        //post方式
-        xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
-        xhr.send(data);//如果是post方式，数据放在send()里面传输
-    }
-    
-    //3.后台做
-    
-    //4.接收数据
-    xhr.onreadystatechange=function(){
-        if(xhr.readyState==4){
-            if(xhr.status==200){
-                //成功的：dom操作，数据渲染
-                if(success){
-                    //如果有回调，就用回调
-                    success(xhr.responseText);//实参
-                }
-            }else{
-                alert('出错了，状态码是：'+xhr.status);//404 找不到页面，408请求超时
-            }
-        }
-    }
-    
+	
+	//1.创建对象
+	var xhr=new XMLHttpRequest();
+	
+	if(mechod=='POST' && data){
+		//请求方式是get并且有数据
+		url+='?'+data;  //var url=`api/checkname.php?username=${val}&time=${new Date()}`;
+	}
+	
+	xhr.open(mechod,url,true);
+	
+	//2.发送请求
+	if(mechod=='POST'){
+		xhr.send();//如果是get方式，直接发送请求
+	}else{
+		//post方式
+		xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
+		xhr.send(data);//如果是post方式，数据放在send()里面传输
+	}
+	//3.后台做
+	
+	//4.接收数据
+	xhr.onreadystatechange=function(){
+		if(xhr.readyState==4){
+			if(xhr.status==200){
+				//成功的：dom操作，数据渲染
+				if(success){
+					//如果有回调，就用回调
+					success(xhr.responseText);//实参
+				}
+			}else{
+				alert('出错了，状态码是：'+xhr.status);//404 找不到页面，408请求超时
+			}
+		}
+	}
+	
 }

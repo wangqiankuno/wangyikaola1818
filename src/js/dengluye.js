@@ -2,9 +2,13 @@
 * @Author: Marte
 * @Date:   2018-11-24 10:09:20
 * @Last Modified by:   Marte
-* @Last Modified time: 2019-01-02 19:31:39
+* @Last Modified time: 2019-03-02 17:06:03
 */
-
+    // 需求:
+    //     用户名验证
+    //     注册
+    //     登陆
+    //     退出
 document.addEventListener('DOMContentLoaded', function(){
     var shoujidenglu=document.querySelector('.shoujidenglu');
     var youxiangdenlu=document.querySelector('.youxiangdenlu');
@@ -27,81 +31,54 @@ document.addEventListener('DOMContentLoaded', function(){
         denglubottom2.style.display='block';
         shoujidenglu.style.color='#000';
         youxiangdenlu.style.color='red';
-        // shoujidenglu.onmouseover=function(){
-        //     shoujidenglu.style.color='#E31436';
-        // }
-        // shoujidenglu.onmouseout=function(){
-        //     shoujidenglu.style.color='#000';
-        // }
     }
-    // var qudenglu=document.querySelector('.qudenglu');
+
     var zhuce=document.querySelector('#zhuce');
     var denglu=document.querySelector('#denglu');
-    // qudenglu.onclick=function(){
-    //     zhuce.style.display='none';
-    //     denglu.style.display='block';
-    // }
+
     var shoujiekuaijiezhuce=document.querySelector('.shoujiekuaijiezhuce');
     shoujiekuaijiezhuce.onclick=function(){
         zhuce.style.display='block';
         denglu.style.display='none';
     }
-    // 需求:
-    //     用户名验证
-    //     注册
-    //     登陆
-    //     退出
-//     var shoujihao=document.querySelector('.shoujihao');
-//     var yval=document.querySelector('.yval');
-//     var ybtn=document.querySelector('.ybtn');
-//     var sval=document.querySelector('.sval');
-//     var tishixinxi=document.querySelector('.tishixinxi');
-//     var isok1=false;
-//     var isok2=false;
+
+    //邮箱登录验证
+
+    var youxiang=document.querySelector('.dyouxinaghao');
+    var ypass=document.querySelector('.ypass');
+    var dbtn=document.querySelector('.d_btn2');
+        console.log(dbtn);
+    var dtishixinxi2=document.querySelector('.dtishixinxi2');
+    var isok1=false;
+    var isok2=false;
 //     var isok3=false;
-//   shoujihao.onblur=function(){
-//     var val1=shoujihao.value;
-// console.log(val1);
-//     if(val1){
-//         if (/^1[34578]\d{9}$/.test(val1)) {
-//             var url='../api/regincheckname.php';
-//             var data=`username=${val1}&time=${new Date()}`;
-//             ajax('GET',url,data,function(str){
-//                 console.log(str);
-//                 if(str === 'yes') {
-//                     console.log('手机号码可以使用');
-//                     isok1=true;
-//                     tishixinxi.innerHTML='';
-//                 }else{
-//                     console.log('手机号码已存在');
-//                     isok1=false;
-//                     tishixinxi.innerHTML='该用户已经存在';
-//                 }
-//             })
-//         } else {
-//             console.log('手机号码格式错误');
-//             tishixinxi.innerHTML='不符合规则';
-//         }
-//     }
-//   }
-//   function suiji(){
-//     var randomnuber=parseInt(Math.random().toFixed(4)*10000);
-//     // console.log(randomnuber);
-//     yval.innerHTML=randomnuber;
-//   }
-//   suiji();
-//   ybtn.onclick=function(){
-//     suiji();
-//   }
-// sval.onblur=function(){
-//     var sval1=sval.value.trim();
-//     if(sval1==yval.innerHTML){
-//         isok2=true;
-//         tishixinxi.innerHTML='';  
-//     }else{
-//         tishixinxi.innerHTML='验证码输入错误';    
-//     }
-// }
+  youxiang.onblur=function(){
+    var valu=youxiang.value.trim();
+    console.log(valu);
+    if(valu){
+        if ( /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(valu)) {
+            isok1=true;
+        } else {
+            console.log('手机号码格式错误');
+            dtishixinxi2.innerHTML='邮箱不符合规则';
+        }
+    }else{
+        alert('邮箱空的！');
+    }
+  }
+
+ypass.onblur=function(){
+    var svall=ypass.value.trim();
+    if(svall){
+        if(/^\d{6}$/){
+            isok2=true;
+        }else{
+            dtishixinxi2.innerHTML='6位数字';  
+        }
+    }else{
+        dtishixinxi2.innerHTML='密码为空！';    
+    }
+}
 // var password=document.querySelector('.password');
 
 // password.onblur=function(){
@@ -117,28 +94,25 @@ document.addEventListener('DOMContentLoaded', function(){
 //     }
 // }
 // var zbtn=document.querySelector('.zbtn');
-//     zbtn.onclick=function(){
+    dbtn.onclick=function(){
+        // var sval1=ypass.value.trim();
+        // var valu=youxiang.value.trim();
+        // var checked=document.querySelector('.checked');
+        if(isok1&& isok2 ){
+           
+            alert('不好意思此功能还未开通！');
+        }else{
+            alert('邮箱或密码验证未成功');
+        }
+    }
 
-//         var checked=document.querySelector('.checked');
-//         if(isok1==true && isok2==true && isok3==true && checked.checked==true){
-//             var url='../api/regin.php';
-//          var   pval=password.value;
-//          var  val1=shoujihao.value.trim();
-//             var data=`username=${val1}&password=${pval}&time=${new Date()}`;
-//             ajax('GET',url,data,function(str){
-//                 console.log(str);
-//                 if(str==='success'){
-//                     Cookie.set('username',val1,{path:'/'});
-//                     console.log(666);
-//                     location.href='#';
-                    
-//                 }
-//             })
-//             tishixinxi.innerHTML='';
-//         }else{
-//             tishixinxi.innerHTML='下面没勾';
-//         }
-//     }
+
+
+
+
+
+
+
     var denglubottom1=document.querySelector('.denglubottom1');
     var dshoujihao=document.querySelector('.dshoujihao');
     var dpass=document.querySelector('.dpass');
@@ -147,35 +121,24 @@ document.addEventListener('DOMContentLoaded', function(){
     var dchecked=document.querySelector('.dchecked');
     // var isok1=false;
     // 
-    //登录
+//手机号登录验证
     //
-    // dshoujihao.onblur=function(){
-    //     var shoujihaoval=dshoujihao.value;
-    //     if(shoujihaoval){
-    //         var url='../api/login.php';
-    //         var data=`username=${shoujihaoval}&time=${new Date()}`;
-    //         ajax('GET',url,data,function(str){
-    //             console.log(str);
-    //             if(str === 'success'){
-    //                 dtishixinxi.innerHTML='';
-    //                 console.log('用户名可以登录');
-    //                 dtishixinxi.innerHTML="用户名存在"
-    //                 // isok1=true;
-    //             }else{
-    //                 dtishixinxi.innerHTML='用户名不存在';
-    //             }
-
-    //         })
-    //     }
-    // }
+    dshoujihao.onblur=function(){
+        var shoujihaoval=dshoujihao.value.trim();
+        if(shoujihaoval){
+            //非空
+        }else{
+            dtishixinxi.innerHTML="内容为空！"
+        }
+    }
     var dchecked=document.querySelector('.dchecked');
     d_btn.onclick=function(){
-        var shoujihaoval=dshoujihao.value;
-        var dpassval=dpass.value;
+        var shoujihaoval=dshoujihao.value.trim();
+        var dpassval=dpass.value.trim();
         if(shoujihaoval && dpassval&&dchecked.checked){
             var url='../api/login.php';
-            var data=`username=${shoujihaoval}&password=${dpassval}&time=${new Date()}`;
-            ajax('GET',url,data,function(str){
+            var data='username='+shoujihaoval +'&password='+dpassval;
+            ajax('POST',url,data,function(str){
                 console.log(str);
 
                 if(str==='success'){
@@ -198,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
                     location.href='../shouye.html';
                 }else{
-                    dtishixinxi.innerHTML='用户名或者密码不正确';
+                    alert('用户名或者密码不正确');
                 }
             })
         }else{

@@ -6,7 +6,7 @@
 */
 
 document.addEventListener('DOMContentLoaded', function(){
-    console.log(555);
+    
     let headtopright=document.querySelector('#head_top_right');
       
     let headtopright2=document.getElementsByClassName('head_top_right2');
@@ -68,7 +68,46 @@ document.addEventListener('DOMContentLoaded', function(){
            xuanxiangbox[i].style.display='none';
            // xuanxiangbox[i].animation(ele,obj,time,fn);
         }
-    }
+    };
+
+//搜索框
+var output=document.querySelector('#output');
+var key=document.querySelector(".search");
+
+//函数内部写你想完成的功能
+window.show = function(data){
+   output.innerHTML = data.s.map(function(item){
+       return `<li>${item}</li>`;
+   }).join("");
+}
+// 2.每次输入过程中，重新生成script标签（关键字改变了）
+key.oninput = function(){
+   var _key = key.value;
+   clearTimeout(this.timer);
+   this.timer = setTimeout(function(){
+       var script = document.createElement("script");
+       script.src = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?json=1&cb=show&wd="+_key;
+       document.body.appendChild(script);
+   },600)
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //给三级导航添加动画吸顶
 // for (let i = 0; i < 6; i++) {
@@ -165,21 +204,21 @@ document.addEventListener('DOMContentLoaded', function(){
   // }
 
 //吸顶菜单
-  // var headcenter=document.querySelector('#headcenter');
-  // var headtop=document.querySelector('#headtop');
-  // // console.log(headtop);
-  // window.onscroll=function(){
-  //    console.log(666);
-  //       var scrollTop=window.scrollY;
-  //       console.log(scrollTop);
-  //       if(scrollTop>=headtop.offsetHeight){
-  //         console.log(666);
-  //         headcenter.className='xin';
-  //       }else{
-  //        headcenter.className='';
-  //       }
-  //     }
-  // console.log(headcenter);
+//   var headcenter=document.querySelector('#headcenter');
+//   var headtop=document.querySelector('#headtop');
+//   // console.log(headtop);
+//   window.onscroll=function(){
+//      console.log(666);
+//         var scrollTop=window.scrollY;
+//         console.log(scrollTop);
+//         if(scrollTop>=headtop.offsetHeight){
+//           console.log(666);
+//           headcenter.className='xin';
+//         }else{
+//          headcenter.className='';
+//         }
+//       }
+//   console.log(headcenter);
 
 
 

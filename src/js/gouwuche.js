@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2018-11-29 22:42:52
 * @Last Modified by:   Marte
-* @Last Modified time: 2019-01-02 20:20:38
+* @Last Modified time: 2019-01-03 22:08:55
 */
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -102,17 +102,28 @@ document.addEventListener('DOMContentLoaded', function(){
     jQuery($=>{
 
             // 全选/不选
+            // var put=document.querySelector(".put");
+            // console.log(put);
             var $checkbox=$('li :checkbox');
            
-            $('#xuanzhong').click(function(){
-                $checkbox.prop('checked',this.checked);
-                total()
-            })
+            // put.onclick=function(){
+
+            //      quanxuan();
+            //      total();
+            //      $checkbox.prop('checked',this.checked);
+            // }
+
             $checkbox.on('click',()=>{
                 console.log(343)
                  total();
                  quanxuan();
             })
+
+             $('#xuanzhong').click(function(){
+                $checkbox.prop('checked',this.checked);
+                total()
+            })
+
             //如果都被选中怎全选就勾选
             function quanxuan(){
                 //筛选出有checked属性的集合
@@ -138,7 +149,7 @@ var tuichubtn=document.querySelector('.tuichubtn');
     tuichubtn.style.display='inline-block';
   }
   tuichubtn.onclick=function(){
-    Cook.remove('name','/');
+    Cookie.remove('name','/');
     yonghuming.innerHTML='考拉欢迎你！';
     tuichubtn.style.display='none';
   }
