@@ -34,17 +34,17 @@ document.addEventListener('DOMContentLoaded', function(){
             var url='../api/regincheckname.php';
             var data='shoujihao='+val1;
             ajax('POST',url,data,function(str){
-                // console.log(str);
-                if(str == 'success') {
-                    tishixinxi.innerHTML='可以使用';
-                    // console.log('手机号码可以使用');
-                    isok1=true;
-                    // tishixinxi.innerHTML='';
-                }else if(str == 'fail'){
-                    console.log('手机号码已存在');
+                console.log(str);
+                // if(str == 'success') {
+                //     tishixinxi.innerHTML='可以使用';
+                //     // console.log('手机号码可以使用');
+                //     isok1=true;
+                //     // tishixinxi.innerHTML='';
+                // }else if(str == 'fail'){
+                //     console.log('手机号码已存在');
                     
-                    tishixinxi.innerHTML='该用户已经存在';
-                }
+                //     tishixinxi.innerHTML='该用户已经存在';
+                // }
             })
         } else {
             console.log('手机号码格式错误');

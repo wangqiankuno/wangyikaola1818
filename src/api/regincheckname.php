@@ -4,7 +4,7 @@ include 'context.php';
 //2.查询前设置编码，防止输出乱码
     $conn->set_charset('utf8');
 
-$name=isset($_POST['username'])?$_POST['username'] :"";
+$name=isset($_POST['shoujihao'])?$_POST['shoujihao'] :'';
 // $mima=isset($_GET['password'])?$_GET['password'] :"1";
 // echo $mima;
      //编写sql语句
@@ -12,10 +12,11 @@ $name=isset($_POST['username'])?$_POST['username'] :"";
 
     $res=$conn->query("select * from yonghu where name='$name'");
    //  $result = $conn->query($sql);
-// echo $result;
+
+// var_dump($res);
     //使用查询结果集
     //得到数组
- if($res){
+ if($res->num_rows){
     echo 'success';
  }else{
     echo 'fail';
