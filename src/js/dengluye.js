@@ -100,7 +100,7 @@ ypass.onblur=function(){
         // var checked=document.querySelector('.checked');
         if(isok1&& isok2 ){
            
-            alert('不好意思此功能还未开通！');
+            alert('此功能还未开通请用手机号！');
         }else{
             alert('邮箱或密码验证未成功');
         }

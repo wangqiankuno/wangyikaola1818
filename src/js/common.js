@@ -381,7 +381,7 @@ var Cookie = {
 function ajax(mechod,url,data,success){
 	
 	//1.创建对象
-	var xhr=new XMLHttpRequest();
+    var xhr=new XMLHttpRequest();
 	
 	if(mechod=='POST' && data){
 		//请求方式是get并且有数据

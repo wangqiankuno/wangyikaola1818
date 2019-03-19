@@ -175,7 +175,9 @@
 
 #box #head #headcenter {
   height: 100px;
+  width:100%;
   background: #fff;
+  z-index: 1;
 }
 
 #box #head #headcenter #head_center {
@@ -183,6 +185,20 @@
   height: 80px;
   padding-top: 20px;
 }
+
+
+#head_center #output{
+  z-index: 1;background:#fff;
+  position:absolute; width: 410px;height:456px;
+  padding-left: 36px;font-size: 18px;
+  display:none;
+}
+#output li{
+  height:30px;
+  line-height:30px;
+  
+}
+
 
 #box #head #headcenter #head_center .head_center3 {
   width: 210px;

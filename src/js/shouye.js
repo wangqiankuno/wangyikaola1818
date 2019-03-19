@@ -5,18 +5,22 @@
 * @Last Modified time: 2019-01-02 19:32:28
 */
 
-document.addEventListener('DOMContentLoaded', function(){
+$(function(){
+
+
+
+
     
     let headtopright=document.querySelector('#head_top_right');
       
     let headtopright2=document.getElementsByClassName('head_top_right2');
     let sanjiao=document.getElementsByClassName('sanjiao');
-    console.log(sanjiao);
+    // console.log(sanjiao);
 
 
     //菜单箭头旋转 
     for(let i=0;i<headtopright2.length;i++){
-        console.log(i);
+        // console.log(i);
         headtopright2[i].onmouseover=function(){
             // console.log(head_top_right2[i]);
             sanjiao[i].style.transform='rotateZ(180deg)';
@@ -45,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var headbottom1=document.querySelector('.head_bottom1');
     var yidui=rich.children;
     var xuanxiangbox=document.getElementsByClassName('xuanxiangbox');
-    console.log(xuanxiangbox);
+    // console.log(xuanxiangbox);
     headbottom1.onmouseover=function(){
         for(let i=0;i<yidui.length;i++){
             yidui[i].onmouseover=function(){
@@ -81,20 +85,34 @@ window.show = function(data){
    }).join("");
 }
 // 2.每次输入过程中，重新生成script标签（关键字改变了）
-key.oninput = function(){
+key.onkeyup = function(){
    var _key = key.value;
    clearTimeout(this.timer);
+   
    this.timer = setTimeout(function(){
        var script = document.createElement("script");
        script.src = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?json=1&cb=show&wd="+_key;
        document.body.appendChild(script);
+       output.style.display='block';
    },600)
    
 }
 
+window.onclick=function(){
+    output.style.display='none';
+}
 
+output.onmouseover=(ev)=>{
+    if(ev.target.tagName='LI'){
+        ev.target.style.color='red';
+    }
+}
 
-
+output.onmouseout=(ev)=>{
+    if(ev.target.tagName='LI'){
+        ev.target.style.color='';
+    }
+}
 
 
 
@@ -204,6 +222,46 @@ key.oninput = function(){
   // }
 
 //吸顶菜单
+
+    var headcenter = document.querySelector('#headcenter');
+  
+    // console.log(headcenter);
+    // window.onscroll = function () {
+    //     console.log(11)
+
+    //     var top = headcenter.offsetTop;
+    //     console.log(window.scrollY);
+    //     if (window.scrollY > top) {
+
+    //         headcenter.style.position = 'fixed';
+    //         headcenter.style.top=0;
+    //         headcenter.style.left=0;
+    //     } else {
+    //         headcenter.style.position = '';
+    //     }
+    // }
+    $(window).scroll(function(){
+        var top = headcenter.offsetTop;
+            console.log(window.scrollY);
+            if (window.scrollY > top) {
+    
+                headcenter.style.position = 'fixed';
+                // headcenter.style.z-index=1;
+                headcenter.style.top=0+'px';
+                headcenter.style.left=0+'px';
+            } else {
+                headcenter.style.position = '';
+            }
+    })
+
+// suckTop('#headcenter');
+
+
+
+
+
+
+//吸顶菜单
 //   var headcenter=document.querySelector('#headcenter');
 //   var headtop=document.querySelector('#headtop');
 //   // console.log(headtop);
@@ -248,11 +306,11 @@ key.oninput = function(){
 
   var yonghuming=document.querySelector('.yonghuming');
   var tuichubtn=document.querySelector('.tuichubtn');
-  console.log(222);
+//   console.log(222);
 
  //接收Cookie账号
   var cookies=Cookie.get('name');
-  console.log(cookies);
+//   console.log(cookies);
   cookies=cookies.slice(7);
 
   if(cookies){
@@ -304,4 +362,4 @@ function render(hezi,msg){
                       </div>`;
              }).join('');
       }
-})
+    })
