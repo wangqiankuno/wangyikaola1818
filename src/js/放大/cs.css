@@ -11,6 +11,23 @@ img {
 
 /* #MagnifierWrap{position: relative;width: 350px;margin:100px auto;} */
 
+.small-img{
+	height: 78px;
+	padding: 1px;
+	margin: 5px;
+	overflow: hidden;
+	border: 1px solid #ddd;
+	text-align: center;
+}
+.small-img img{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+
+
+
+
 #MagnifierWrap2 {
 	position: relative;
 	width: 350px;

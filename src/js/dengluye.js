@@ -19,12 +19,7 @@ document.addEventListener('DOMContentLoaded', function(){
         denglubottom2.style.display='none';
         shoujidenglu.style.color='#E31436';
         youxiangdenlu.style.color='#000';
-        // youxiangdenlu.onmouseover=function(){
-        //     youxiangdenlu.style.color='#E31436';
-        // }
-        // youxiangdenlu.onmouseout=function(){
-        //     youxiangdenlu.style.color='#000';
-        // }
+     
     }
     youxiangdenlu.onclick=function(){
         denglubottom1.style.display='none';
@@ -79,21 +74,7 @@ ypass.onblur=function(){
         dtishixinxi2.innerHTML='密码为空！';    
     }
 }
-// var password=document.querySelector('.password');
 
-// password.onblur=function(){
-//     var pval=password.value; 
-//     if(pval){
-//         if(/^\d{3,8}$/.test(pval)){
-//             console.log('手机密码格式正确');
-//             tishixinxi.innerHTML='';
-//             isok3=true;
-//         }else{
-//             tishixinxi.innerHTML='数字,大小写字母,至少其中两种组成且长度不小于8';
-//         }
-//     }
-// }
-// var zbtn=document.querySelector('.zbtn');
     dbtn.onclick=function(){
         // var sval1=ypass.value.trim();
         // var valu=youxiang.value.trim();
@@ -105,12 +86,6 @@ ypass.onblur=function(){
             alert('邮箱或密码验证未成功');
         }
     }
-
-
-
-
-
-
 
 
     var denglubottom1=document.querySelector('.denglubottom1');

@@ -1,6 +1,6 @@
 <?php
 //查找所有的数据
-include 'context.php';
+include 'conn.php';
 
 
   $name=isset($_GET['id'])? $_GET['id'] : null ;

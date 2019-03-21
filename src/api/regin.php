@@ -1,6 +1,6 @@
 <?php
   //链接
-    include('context.php');
+  include 'conn.php';
   
     //注册
   $name=isset($_POST['username'])? $_POST['username'] : '15737354734' ;

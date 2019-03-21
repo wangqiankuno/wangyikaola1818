@@ -179,6 +179,35 @@ function randomColor(type){
 }
 
 
+/*
+css():获取或设置样式
+ 获取：传两个参数  参数一：对象名    参数二：属性名
+ 设置：传三个参数    参数一：对象名    参数二：属性名  参数三：属性值
+ 
+ */
+
+function css() {
+	var obj = arguments[0];
+	var attr = arguments[1];
+	var value = arguments[2];
+	//arguments:系统提供的数组，能够帮你存实参
+	if(arguments.length == 2) {
+		//获取样式
+		if(getComputedStyle(obj, false)[attr]) {
+			//高级浏览器
+			return getComputedStyle(obj, false)[attr];
+		} else {
+			//低版本浏览器
+			return obj.currentStyle[attr];
+		}
+	} else if(arguments.length == 3) {
+		//设置样式：设置行内样式  box.style.backgroundColor = 'red';
+		obj.style[attr] = value;
+	}else{
+		alert('参数个数不正确');
+	}
+}
+
 
 // Cooie的操作  //琳姐
 var Cookie = {

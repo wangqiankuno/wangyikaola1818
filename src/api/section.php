@@ -1,6 +1,6 @@
 <?php
 
- include 'context.php';
+ include 'conn.php';
 
 $name=isset($_GET['number'])?$_GET['number'] :null;
 

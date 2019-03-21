@@ -18,6 +18,4 @@
              die("出错原因: " . $conn->connect_error);
      } 
     //   echo "连接成功";
-    
- 
 ?>

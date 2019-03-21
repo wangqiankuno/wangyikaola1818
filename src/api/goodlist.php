@@ -1,6 +1,6 @@
 <?php
 //查找所有的数据
-include 'context.php';
+include 'conn.php';
 
 $jiage=isset($_GET['jiage'])? $_GET['jiage'] : null ;
 $sheng=isset($_GET['sheng'])? $_GET['sheng'] : null ;

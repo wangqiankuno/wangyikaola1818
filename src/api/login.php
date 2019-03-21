@@ -1,6 +1,6 @@
 <?php
 //登录
- include('context.php');
+include 'conn.php';
 
 
 $name=isset($_GET['username'])? $_GET['username'] : '' ;

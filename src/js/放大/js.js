@@ -1,5 +1,5 @@
 (function() {
-	/**
+	/*
 	* 	兼容性  : IE6+ 
 	*   ******* :1. 更改获取图片方式，以小图li为基础通过自定义属性data-lsrc和data-maxSrc来获取,
 				 2. 修复safari bug

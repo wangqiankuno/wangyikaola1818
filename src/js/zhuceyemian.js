@@ -5,13 +5,6 @@
 * @Last Modified time: 2019-03-01 20:15:19
 */
 $(function () {
-    // var shoujidenglu=document.querySelector('.shoujidenglu');
-    // var qudenglu=document.querySelector('.qudenglu');
-    // var zhuce=document.querySelector('#zhuce');
-    // var denglu=document.querySelector('#denglu');
-
-    // var shoujiekuaijiezhuce=document.querySelector('.shoujiekuaijiezhuce');
-
     var shoujihao = document.querySelector('.shoujihao');
     // console.log(shoujihao);
     var yval = document.querySelector('.yval');

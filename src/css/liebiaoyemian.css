@@ -172,6 +172,9 @@
 #box #head #headcenter {
   height: 100px;
   background: #fff;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 }
 
 #box #head #headcenter #head_center {
@@ -180,6 +183,18 @@
   padding-top: 20px;
   margin: 0 auto;
 }
+#head_center #output{
+  z-index: 1;background:#fff;
+  position:absolute; width: 410px;height:456px;
+  padding-left: 36px;font-size: 18px;
+  display:none;
+}
+#output li{
+  height:30px;
+  line-height:30px;
+  
+}
+
 
 #box #head #headcenter #head_center .head_center3 {
   width: 210px;
@@ -563,21 +578,27 @@
 
 #box #zhongjian {
   width: 100%;
-  background: #a40809;
+  background: rgb(247, 236, 236);
 }
 
 #box #zhongjian .zhongjiantu {
   width: 100%;
   height: 505px;
-  background: url(../img/liebiaoyetu1.png) no-repeat;
+  /* background: url(../img/liebiaoyetu1.png) no-repeat; */
   border-top: 1px solid #CCCCCC;
   margin-top: -1px;
   margin-bottom: 26px;
 }
+#box #zhongjian .zhongjiantu img{
+  width: 100%;
+  height: 100%;
+}
+
+
 
 #box #zhongjian .zhongjian1 {
   width: 100%;
-  background: #a40809;
+
 }
 
 #box #zhongjian .zhongjian1 .zhongjiantop1 {
@@ -705,7 +726,7 @@
 #box #zhongjian .zhongjian1 .zhongjiancenter1 p {
   width: 990px;
   height: 30px;
-  background: red;
+  background: rgb(235, 169, 169);
 }
 
 #box #zhongjian .zhongjian1 .zhongjiancenter1 p span {
@@ -722,7 +743,7 @@
   overflow: hidden;
   margin: 0 auto;
   cursor: pointer;
-  background: #a40809;
+
 }
 
 #box #zhongjian .zhongjian1 .zhongjianbottom1 .goods_bd {
@@ -841,7 +862,7 @@
 
 #box #zhongjian .zhongjian2 {
   width: 100%;
-  height: 2570px;
+  /* height: 2570px; */
 }
 
 #box #zhongjian .zhongjian2 .zhongjiantop2 {
@@ -852,7 +873,7 @@
 #box #zhongjian .zhongjian2 .zhongjiantop2 .zhongjiantop2_top {
   width: 1000px;
   height: 60px;
-  background: green;
+  background: rgb(236, 132, 132);
   font-size: 30px;
   line-height: 60px;
   text-align: center;
@@ -961,9 +982,9 @@
 #box #zhongjian .zhongjian2 .zhongjiantop3_top {
   width: 1000px;
   height: 60px;
-  background: #2c2660;
+  background: #b26262;
   font-size: 30px;
-  color: red;
+  color: #3b1313;
   line-height: 60px;
   text-align: center;
   margin: 22px 0 30px 0;
@@ -972,12 +993,34 @@
 
 #box #zhongjian .zhongjian2 .zhongjianbottom2 {
   width: 990px;
-  height: 1454px;
+
   padding-left: 0 5px;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin: 0 auto;
   cursor: pointer;
 }
+#box #zhongjian .zhongjian2 .zhongjianbottom2 .zhongjiantop3{
+  width: 990px;
+
+}
+
+
+#box #zhongjian .zhongjian2 .more{
+  width: 990px;
+  height: 46px;
+  float:left;
+  background:rgb(197, 176, 176);
+  text-align: center;
+  line-height: 46px;
+  margin-top: 30px;
+}
+#box #zhongjian .zhongjian2 .big{
+  display: none;
+  margin:10px  auto;
+  margin-left:48%;
+}
+
+
 
 #box #zhongjian .zhongjian2 .zhongjianbottom2 .goods_bd {
   width: 194px;
@@ -1037,6 +1080,7 @@
 #box #zhongjian .zhongjian2 .zhongjianbottom2 .goods_bd .goods_bd_border .m-priceitem {
   width: 192px;
   height: 22px;
+  margin-top:30px;
 }
 
 #box #zhongjian .zhongjian2 .zhongjianbottom2 .goods_bd .goods_bd_border .m-priceitem .price {
@@ -1096,7 +1140,9 @@
 #box #foot {
   width: 100%;
   height: 463px;
-  background: #FFFFFF;
+  background:#fff;
+  float:left;
+ 
   border-top: 1px solid #EAEAEA;
 }
 
@@ -1209,9 +1255,10 @@
 }
 
 #box #foot .footbottom {
-  width: 1423px;
+  width: 100%;
   height: 53px;
   background: #333333;
+  float:left;
 }
 
 #box #foot .footbottom p {
@@ -1234,22 +1281,23 @@
 #box .louceng {
   width: 102px;
   position: fixed;
-  right: 150px;
-  top: 80%;
+  right: 132px;
+  top: 57%;
   display: none;
 }
 
 #box .louceng .louceng_tiaoyue {
   width: 100px;
-  border: 1px solid #FFECED;
+
 }
 
 #box .louceng .louceng_tiaoyue li {
-  width: 100px;
-  height: 26px;
+  width: 50px;
+  height: 60px;
   border-bottom: 1px solid #FFECED;
   background: #F7A5A5;
   text-align: center;
+  line-height: 60px;
 }
 
 #box .louceng .louceng_tiaoyue li a {

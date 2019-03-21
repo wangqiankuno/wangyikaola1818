@@ -82,14 +82,6 @@ document.addEventListener('DOMContentLoaded', function(){
             // console.log(arr);
             if(res){
             //利用filter筛选ID是res的数据
-    
-            // $sql = 'select * from liebiaoye';
-                // var brr=arr.filter(function(item,index) {
-                //     return item.id==res?true:false;
-                //     console.log(item.id);
-                // });
-                // 
-                // console.log(brr);
         wupinxiangqing.innerHTML= arr.map(function(item){
                     // console.log(item.images);
                     return `<div class="wupinxiangqing">     
@@ -157,25 +149,6 @@ $(function(){
          MagnifierF(wupin_img);
         });
 
-
-                // console.log(html);
-                // wupinxiangqing.innerHTML=html;
-                // var trolley=document.querySelector('.trolley');
-                // var a
-                // $('.jia').on('click',(e)=>{
-                //     e.preventDefault();
-                //     a=$('.val').val();
-                //     a++;
-                //     $('.val').val(a);
-                // });
-                // $('.jian').on('click',(e)=>{
-                //      e.preventDefault();
-                //      a=$('.val').val();
-                //      if(a==1)return
-                //      a--;
-                //     $('.val').val(a);
-
-                // })
 //添加点击事件到购物车
             //点击购物车
     var tianjia=document.querySelector('.tianjia');
@@ -190,7 +163,9 @@ $(function(){
                 // console.log(goodslist);
                 if(goodslist == ""){
                         alert("请登录");
+                        location.href="./dengluye.html"
                 }else{
+                     location.href="./gouwuche.html"
                     $cookie = goodslist;
                     $imagess = arr[0].images;
                     $names = arr[0].jieshao;
@@ -207,16 +182,7 @@ $(function(){
                         console.log(arrs);
                         })
                 }
-                    // arr[0].num=$('.val').val();
-                    // goodslist.forEach(item=>{
-                    //   if(item.id==brr[0].id){
-                    //     item.num=item.num*1+brr[0].num*1;
-                    //     a=false;
-                    //    }
-                    // });
-                    //  if(a) {goodslist.push(brr[0]);}
-                    // Cookie.getCookie('goodslist',JSON.stringify(goodslist));
-                    location.href="./gouwuche.html"
+        
                 }
                  // $('.wupin_img_top').lxzoom()
             }
@@ -225,36 +191,6 @@ $(function(){
     // console.log(res);
     xhr.open('get',`../api/xiangqingye.php?id=${res}`);
     xhr.send();
-    // var pinglun_btn=document.querySelector('.pinglun_btn');
-    // var alis=pinglun_btn.children;
-    // var pinglun=document.querySelector('.pinglun');
-    // var dadadehezi=document.querySelector('.dadadehezi');
-    // // console.log(alis);
-    // for(var i=0;i<alis.length;i++){
-    //     alis[i].index=i;
-    //     alis[i].onclick=function(){
-    //         for(var j=0;j<alis.length;j++){
-    //             alis[j].className='';
-    //         }
-    //         alis[this.index].className='gaoliang';
-    //         window.scrollTo(0,752);
-    //     }
-    // }
-    // var gouwuche=document.querySelector('.gouwuche');
-    // var Top=pinglun.offsetTop;
-    // console.log(Top);
-    // window.onscroll=function(){
-    //     var scrollTop=window.scrollY;
-    //     if(scrollTop>=Top){
-    //         dadadehezi.className='dadadehezi dahezi';
-    //         dadadehezi.style.backgroundColor='#fff';
-    //         gouwuche.style.display='block';
-    //     }else{
-    //         dadadehezi.className='dadadehezi';
-    //         dadadehezi.style.backgroundColor='#F8F8F8';
-    //         gouwuche.style.display='none';
-    //     }
-    // }
 
 
 
@@ -276,6 +212,37 @@ var tuichubtn=document.querySelector('.tuichubtn');
     tuichubtn.style.display='none';
   }
 
+//飞入效果
+// $('.add-to-cart').on('click', function () {
+// 	var cart = $('.shopping-cart');
+// 	var imgtodrag = $(this).parent('.item').find('img').eq(0);
+// 	if (imgtodrag) {
+// 		var imgclone = imgtodrag.clone().offset({
+// 			top: imgtodrag.offset().top,
+// 			left: imgtodrag.offset().left
+// 		}).css({
+// 			'opacity': '0.5',
+// 			'position': 'absolute',
+// 			'height': '150px',
+// 			'width': '150px',
+// 			'z-index': '100'
+// 		}).appendTo($('body')).animate({
+// 			'top': cart.offset().top + 10,
+// 			'left': cart.offset().left + 10,
+// 			'width': 75,
+// 			'height': 75
+// 		}, 1000, 'easeInOutExpo');
+// 		setTimeout(function () {
+// 			cart.effect('shake', { times: 2 }, 200);
+// 		}, 1500);
+// 		imgclone.animate({
+// 			'width': 0,
+// 			'height': 0
+// 		}, function () {
+// 			$(this).detach();
+// 		});
+// 	}
+// });
 
 
 //返回顶部
