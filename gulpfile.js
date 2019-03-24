@@ -11,7 +11,12 @@ gulp.task('compileSass',function(){
 gulp.task("jt",function(){
     gulp.watch("./src/scss/*.scss",gulp.series("compileSass"))
 })
-	
+gulp.task('minify-js', function () {
+    gulp.src('js/*.js') // 要压缩的js文件
+    .pipe(uglify())  //使用uglify进行压缩,更多配置请参考：
+    .pipe(gulp.dest('dist/js')); //压缩后的路径
+});
+
 // outputStyle参数（gulp-sass）：
 //     nested(默认）
 //     expanded：展开

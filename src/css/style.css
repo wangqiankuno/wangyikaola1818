@@ -7,6 +7,47 @@
   width: 100%;
 }
 
+
+#box #boo{
+  width: 600px;
+  height: 600px;
+  background: rgb(155, 34, 34);
+  position: absolute;
+  border-radius: 8%;
+  z-index: 1;
+  left: 50%;
+	top: 88%;
+  transform: translate(-50%,-50%);
+ 
+}
+#box #boo h3{
+  width: 600px;
+  height: 600px;
+  text-align: center;
+  font-size:50px;
+  color:#fff;
+  line-height: 500px;
+
+}
+#box #boo #time{
+  position: absolute;
+  right: 82px;
+  top: 22px;
+}
+#box #boo #close{
+  position: absolute;
+  right: 25px;
+  top: 22px;
+  border-radius: 30%;
+  cursor: pointer;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #d8d8d8;
+  text-align: center;
+  line-height: 20px;
+}
+
 #box #head {
   height: 173px;
   width: 100%;

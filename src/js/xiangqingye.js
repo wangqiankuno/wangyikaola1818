@@ -158,7 +158,6 @@ $(function(){
     var names= arr[0].name;
          // console.log(imagess);
     tianjia.onclick=function(){
-                    // var a=true
         var goodslist=Cookie.get('name');
                 // console.log(goodslist);
                 if(goodslist == ""){

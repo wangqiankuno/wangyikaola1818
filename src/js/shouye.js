@@ -7,6 +7,39 @@
 
 $(function () {
 
+    // var iWidth=document.documentElement.clientWidth;
+    // var iHeigth=document.documentElement.clientHeight;
+    var oBox=document.getElementById('boo');
+    var timee=document.getElementById('time');
+    var close=document.getElementById('close');
+    
+    // oBox.style.left=(iWidth-oBox.offsetWidth)/2+'px';
+    // oBox.style.top=(iHeigth-oBox.offsetHeight)/2+'px';
+    
+    //1、5秒后自动关闭(隐藏)节点
+    
+    //方法一：倒计时到达时间就关闭
+    var timer2=setTimeout(function(){
+        oBox.style.display='none';
+    },5000);
+    
+    	// 2.5秒不断再刷新
+		var num=4;
+			var timer=setInterval(function(){
+				timee.innerHTML=num+'秒';
+				num--;
+				if(num==0){
+					clearInterval(timer);
+				}
+			},1000);//4 3 2 1 0
+			
+			//3.点击关闭可以提前隐藏节点
+			close.onclick=function(){
+				oBox.style.display='none';
+				clearInterval(timer);
+				clearTimeout(timer2);
+			}
+
     let headtopright = document.querySelector('#head_top_right');
 
     let headtopright2 = document.getElementsByClassName('head_top_right2');

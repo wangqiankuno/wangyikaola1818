@@ -183,6 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 $('#all').prop('checked', false);
             }
+            allNum();
         });
 
 
