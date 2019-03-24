@@ -26,9 +26,6 @@ window.onload = function () {
         light();
     }
 
-
-
-
     //3.焦点跟随
     function light() {
         $('#ppo span').removeClass('active');

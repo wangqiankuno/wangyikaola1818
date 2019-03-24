@@ -45,8 +45,6 @@ $(function () {
     let headtopright2 = document.getElementsByClassName('head_top_right2');
     let sanjiao = document.getElementsByClassName('sanjiao');
     // console.log(sanjiao);
-
-
     //菜单箭头旋转 
     for (let i = 0; i < headtopright2.length; i++) {
         // console.log(i);
@@ -93,9 +91,6 @@ $(function () {
         }
     }
 
-
-
-
     headbottom1.onmouseout = function () {
         for (let i = 0; i < yidui.length; i++) {
             xuanxiangbox[i].style.display = 'none';
@@ -140,8 +135,6 @@ $(function () {
             ev.target.style.color = '';
         }
     }
-
-
     //鼠标滑过字体变红
     var meizhuang_bottom_t = document.querySelector('.meizhuang_bottom_t')
     console.log(meizhuang_bottom_t);
@@ -220,11 +213,7 @@ $(function () {
         }
     }
 
-
-
     //第二个轮播图
-
-
     var iQ = $('.meishibox ul').eq(0).outerWidth();//JS offsetwidth
     // var iQ=220;//JS offsetwidth
 
@@ -305,12 +294,7 @@ $(function () {
         light();
     });
 
-
-
-
-
     //吸顶菜单
-
     var headcenter = document.querySelector('#headcenter');
     $(window).scroll(function () {
         var top = headcenter.offsetTop;
@@ -323,7 +307,6 @@ $(function () {
             headcenter.style.position = '';
         }
     })
-
 
     //返回顶部
     var fanhuidingbu = document.querySelector('.fanhuidingbu');

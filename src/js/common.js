@@ -396,8 +396,6 @@ var Cookie = {
     
 // }
 
-
-
 /*
 	ajax函数封装：要参数
 		参数一：请求方式：get  post

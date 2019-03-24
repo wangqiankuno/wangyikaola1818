@@ -65,9 +65,6 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     }
 
-
-
-
 //接收列表页
     var wupinxiangqing=document.querySelector('.wupinxiangqing');
     var res=decodeURI(location.search);
@@ -190,8 +187,6 @@ $(function(){
     // console.log(res);
     xhr.open('get',`../api/xiangqingye.php?id=${res}`);
     xhr.send();
-
-
 
 var yonghuming=document.querySelector('.yonghuming');
 var tuichubtn=document.querySelector('.tuichubtn');

@@ -11,10 +11,57 @@ gulp.task('compileSass',function(){
 gulp.task("jt",function(){
     gulp.watch("./src/scss/*.scss",gulp.series("compileSass"))
 })
-gulp.task('minify-js', function () {
-    gulp.src('js/*.js') // 要压缩的js文件
-    .pipe(uglify())  //使用uglify进行压缩,更多配置请参考：
-    .pipe(gulp.dest('dist/js')); //压缩后的路径
+
+// //3.压缩js文件:先把ES6转成ES3再压缩
+// var js = require('gulp-uglify');
+// gulp.task('jsmin',function() {
+//     return gulp.src('src/js/*.js')
+//                 .pipe(js())
+//                 .pipe(gulp.dest('dist/js'));
+// });
+//7.ES6-ES5才能压缩, 箭头函数，let const
+
+// let babel = require('gulp-babel');
+
+// //es6转es5
+// gulp.task('es6',function(){
+//     gulp.src('src/js/*.js')
+//     .pipe(babel({
+//         'presets':['es2015']
+//     }))
+//     .pipe(gulp.dest('dist/es5'));
+// });
+  
+var babel = require("gulp-babel");   // ES6转化ES5模块
+var js = require('gulp-uglify');     // 压缩js模块
+//转es6转es5并压缩js
+gulp.task('jsmin',function() {
+            // 1.找到js文件
+    return gulp.src('src/js/*.js')
+            // 2.es6转es5
+                .pipe(babel()) 
+            // 3.压缩js
+                .pipe(js())
+            // 4.把文件放到对应上线目录
+                .pipe(gulp.dest('dist/js'));
+});
+
+
+
+var cssmin = require('gulp-cssmin');
+gulp.task('cssmin',function() {
+    return gulp.src('src/css/*.css')
+                .pipe(cssmin())
+                .pipe(gulp.dest('dist/css'));
+});
+
+
+
+var htmlmin = require('gulp-minify-html');
+gulp.task('htmlmin',function() {
+    return gulp.src('src/html/*.html')
+                .pipe(htmlmin())
+                .pipe(gulp.dest('dist/html'));
 });
 
 // outputStyle参数（gulp-sass）：
@@ -22,4 +69,4 @@ gulp.task('minify-js', function () {
 //     expanded：展开
 //     compact：单行
 //     compressed：压缩
-// on('error', sass.logError)：忽略错误，继续编译
+// on('error', sass.logError)：忽略错误，继续编译 
