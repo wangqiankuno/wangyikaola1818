@@ -83,7 +83,7 @@ $(function () {
         }
 
     }
-    // var zbtn = document.querySelector('.zbtn');
+    
     var checked = document.querySelector('.checked');
 
 
