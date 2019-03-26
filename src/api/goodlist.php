@@ -53,7 +53,7 @@ if($sheng==1){
 
 if($jiang==2){
     //查询数据库（结果集）
-    $sql="SELECT * FROM liebiaoye ORDER BY id DESC";
+    $sql="SELECT * FROM liebiaoye ORDER BY jiage DESC";
     $res = $conn->query($sql);
     $concet = $res->fetch_all(MYSQLI_ASSOC);
     echo json_encode($concet,JSON_UNESCAPED_UNICODE);
